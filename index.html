@@ -196,6 +196,7 @@
       /*------------------------------------------------------------ HOME ------------------------------------------------------------- */
 
       .home {
+            padding-top: 0;
             position: relative;
             height: 100vh;
             display: flex;
@@ -1030,7 +1031,7 @@ footer {
                   <a href="https://github.com/Debangi2004" class="social-link">GitHub</a>
                   <a href="https://www.linkedin.com/in/debangi-ghatak-d777999/" class="social-link">LinkedIn</a>
                   <a href="https://www.instagram.com/debangi_ghatak/" class="social-link">Instagram</a>
-                  <a href="https://www.instagram.com/debangi_ghatak/" class="social-link">Twitter</a>
+                  <a href="https://x.com/7Daisy2509" class="social-link">Twitter</a>
             </div>
       </div>
   </div>
@@ -1458,6 +1459,11 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+            //Automation of links opening in a new tab
+
+            document.querySelectorAll('a').forEach(link => {
+                link.setAttribute('target', '_blank');
+            });
     </script>
 </body>
 </html>
