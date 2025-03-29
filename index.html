@@ -12,7 +12,7 @@
             --background: #f5f5f5;
             --text: #2d2d2d;
             --accent: #4a4a4a;
-            --success: rgb(0, 202, 0);
+            --success: #22c55e;
             --card-bg: rgba(255, 255, 255, 0.7);
             --nav-bg-light: rgba(245, 245, 245, 0.85);
             --nav-bg-dark: rgba(45, 45, 45, 0.85);
@@ -247,7 +247,7 @@
       }
 
       .name {
-            font-size: 5rem;
+            font-size: 4.6rem;
             font-weight: 700;
             margin-bottom: 1rem;
             opacity: 0;
@@ -255,7 +255,7 @@
       }
 
       .profession {
-            font-size: 2rem;
+            font-size: 1.4rem;
             color: var(--accent);
       }
 
@@ -332,7 +332,7 @@
 
       .skill-icon {
             font-size: 1.5rem;
-            background-color: var(--accent);
+            background-color: var(--hover);
             padding: 0.75rem;
             border-radius: 12px;
       }
@@ -592,7 +592,7 @@
       /*------------------------------------------------------ CONTACT -------------------------------------------------------*/
        
       #contact {
-            padding-top: 140px; 
+            padding-top: 0.5px; 
       }
 
       .contact-container {
@@ -653,9 +653,11 @@
         }
         .contact-form {
             background: var(--card-bg);
+            padding-top: 0rem;
+            padding-bottom: 0rem;
             padding: 1.6rem;
             border-radius: 20px;
-            max-width: 600px; 
+            min-width: 500px; 
             box-shadow: 0 10px 30px var(--card-shadow);
             opacity: 0;
             transform: translateX(50px);
@@ -714,8 +716,8 @@
         }
 
         #successMessage {
-            position: absolute;
-            top: 20px;
+            position:fixed;
+            top: 117px;
             right: 20px;
             background: var(--success);
             color: white;
@@ -724,7 +726,7 @@
             opacity: 0;
             transform: translateX(100%);
             transition: all 0.5s ease;
-            z-index: 1100;
+            z-index: 9000000;
         }
 
         
@@ -739,14 +741,6 @@
             opacity: 0.4;
         }
 
-        .parallax-dot {
-            position: absolute;
-            width: 10px;
-            height: 10px;
-            opacity: 0.8;
-            background: var(--hover);
-            border-radius: 50%;
-        }
 
 /*------------------------------------------------FOOTER--------------------------------------------------------*/
 
@@ -781,6 +775,17 @@ footer {
                 transition: 0.3s;
             }
 
+            .name {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            opacity: 0;
+            transform: translateY(50px);
+            }
+
+            .profession {
+                font-size: 1rem;
+            }
             .toggle-mode {
                 position: fixed;
                 top: 1rem;
@@ -877,6 +882,7 @@ footer {
             }
 
             .contact-form {
+                min-width: 60%;
                 padding: 1.5rem;
             }
       }
@@ -1115,52 +1121,54 @@ footer {
 <!------------------------------------------------------CONTACT------------------------------------------------------> 
 <!------------------------------------------------------------------------------------------------------------------> 
  
-
 <section id="contact">
-  <div id="successMessage">✅ Message sent successfully</div>
+    <div id="successMessage">✅ Message sent successfully</div>
+    
+    <div class="parallax-bgd" id="parallaxBg"></div>
+    
+    <div class="contact-container">
+        <div class="contact-info">
+            <h1 class="contact-title">Get in Touch</h1>
+            <div class="contact-details">
+                <p class="contact-para">Hey everyone! 🚀 I’ve got something super exciting in the works, and I’d love to connect with you! Whether it’s ideas, collaborations, or just a great conversation—let’s make it happen. Drop me a message, and let’s talk! Can’t wait to hear from you! 💬🔥 #Let’sConnect</p>
+                <br>
+                <div class="contact-item">
+                    <div class="contact-icon">📧</div>
+                    <p>debangighatak@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📱</div>
+                    <p>+91 7001906949</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <p>Sripally, Burdwan - 713103</p>
+                </div>
+            </div>
+        </div>
   
-  <div class="parallax-bgd" id="parallaxBg"></div>
-  
-  <div class="contact-container">
-      <div class="contact-info">
-          <h1 class="contact-title">Get in Touch</h1>
-          <div class="contact-details">
-              <div class="contact-item">
-                  <div class="contact-icon">📧</div>
-                  <p>debangighatak@gmail.com</p>
-              </div>
-              <div class="contact-item">
-                  <div class="contact-icon">📱</div>
-                  <p>+91 7001906949</p>
-              </div>
-              <div class="contact-item">
-                  <div class="contact-icon">📍</div>
-                  <p>Sripally, Burdwan - 713103</p>
-              </div>
-          </div>
-      </div>
-
-      <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="contactForm">
-          <input type="hidden" name="access_key" value="58932e00-a6fc-4857-aeac-7853adf53b36">
-          <input type="hidden" name="subject" value="New Contact Form Submission">
-          <input type="checkbox" name="botcheck" style="display: none;">
-          
-          <div class="form-group">
-              <label class="form-label">Name</label>
-              <input type="text" name="name" class="form-input" required>
-          </div>
-          <div class="form-group">
-              <label class="form-label">Email</label>
-              <input type="email" name="email" class="form-input" required>
-          </div>
-          <div class="form-group">
-              <label class="form-label">Message</label>
-              <textarea name="message" class="form-input" required></textarea>
-          </div>
-          <button type="submit" class="submit-btn">Send Message</button>
-      </form>
-  </div>
-</section>
+        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST" id="contactForm">
+            <input type="hidden" name="access_key" value="58932e00-a6fc-4857-aeac-7853adf53b36">
+            <input type="hidden" name="subject" value="New Contact Form Submission">
+            <input type="checkbox" name="botcheck" style="display: none;">
+            
+            <div class="form-group">
+                <label class="form-label">Name</label>
+                <input type="text" name="name" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-input" required>
+            </div>
+            <div class="form-group">
+                <label class="form-label">Message</label>
+                <textarea name="message" class="form-input" required></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Send Message</button>
+        </form>
+    </div>
+  </section>
+ 
 <footer class="sticky bottom-0 bg-gray-100 py-1 text-center text-xs">
     © 2025 | Created by Debangi Ghatak
 </footer>
@@ -1314,124 +1322,7 @@ footer {
           delay: 0.2
       });
 
-      //------------------------------------------- PROJECT --------------------------------------------------------
-
-      // Canvas animation
-      const canvas = document.getElementById('backgroundCanvas');
-        const ctx = canvas.getContext('2d');
-
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        }
-
-        resizeCanvas();
-        window.addEventListener('resize', resizeCanvas);
-
-        const points = [];
-        const numberOfPoints = Math.min(20, Math.floor(window.innerWidth / 50));
-        const radius = Math.min(window.innerWidth, window.innerHeight) * 0.4;
-
-        // Initialize points in a circle
-        for (let i = 0; i < numberOfPoints; i++) {
-            const angle = (i / numberOfPoints) * Math.PI * 2;
-            const x = window.innerWidth / 2 + Math.cos(angle) * radius;
-            const y = window.innerHeight / 2 + Math.sin(angle) * radius;
-            
-            points.push({
-                baseX: x,
-                baseY: y,
-                x: x,
-                y: y,
-                speedX: (Math.random() - 0.5) * 0.5,
-                speedY: (Math.random() - 0.5) * 0.5
-            });
-        }
-
-        let mouseX = 0;
-        let mouseY = 0;
-
-        
-        // Track mouse movement
-        window.addEventListener('mousemove', (e) => {
-            mouseX = e.clientX - window.innerWidth / 2;
-            mouseY = e.clientY - window.innerHeight / 2;
-        });
-
-        function animate() {
-            ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // Update and draw points
-            points.forEach(point => {
-                // Update position
-                point.baseX += point.speedX;
-                point.baseY += point.speedY;
-
-                // Bounce off edges
-                if (point.baseX < 0 || point.baseX > window.innerWidth) point.speedX *= -1;
-                if (point.baseY < 0 || point.baseY > window.innerHeight) point.speedY *= -1;
-
-                // Add mouse influence
-                point.x = point.baseX + (mouseX / window.innerWidth) * 40;
-                point.y = point.baseY + (mouseY / window.innerHeight) * 40;
-            });
-
-            // Draw connections between points
-            ctx.beginPath();
-            ctx.strokeStyle = getComputedStyle(document.body).getPropertyValue('--accent');
-            ctx.lineWidth = 0.5;
-
-            for (let i = 0; i < points.length; i++) {
-                for (let j = i + 1; j < points.length; j++) {
-                    const dx = points[i].x - points[j].x;
-                    const dy = points[i].y - points[j].y;
-                    const distance = Math.sqrt(dx * dx + dy * dy);
-                    
-                    if (distance < 200) {
-                        ctx.globalAlpha = 1 - (distance / 200);
-                        ctx.moveTo(points[i].x, points[i].y);
-                        ctx.lineTo(points[j].x, points[j].y);
-                    }
-                }
-            }
-            ctx.stroke();
-
-            // Draw points
-            points.forEach(point => {
-                ctx.beginPath();
-                ctx.fillStyle = getComputedStyle(document.body).getPropertyValue('--accent');
-                ctx.arc(point.x, point.y, 3, 0, Math.PI * 2);
-                ctx.fill();
-            });
-
-            requestAnimationFrame(animate);
-        }
-
-        animate();
-
-        // Handle window resize
-        window.addEventListener('resize', () => {
-            resizeCanvas();
-            
-            // Recalculate points positions
-            const radius = Math.min(window.innerWidth, window.innerHeight) * 0.4;
-            points.forEach((point, i) => {
-                const angle = (i / points.length) * Math.PI * 2;
-                point.baseX = window.innerWidth / 2 + Math.cos(angle) * radius;
-                point.baseY = window.innerHeight / 2 + Math.sin(angle) * radius;
-                point.x = point.baseX;
-                point.y = point.baseY;
-            });
-        });
-
-        // Handle visibility change to pause/resume animation
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                cancelAnimationFrame(animate);
-            } else {
-                requestAnimationFrame(animate);
-            }
-        });
+     
 
         //------------------------------------------- CONTACT ---------------------------------------------------
 
